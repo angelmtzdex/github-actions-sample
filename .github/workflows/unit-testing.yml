@@ -2,7 +2,10 @@
 
 name: unit-testing
 
-on: pull_request
+on:
+    pull_request:
+
+    workflow_dispatch: 
 
 jobs: 
 
@@ -20,4 +23,3 @@ jobs:
               with:
                 distribution: 'temurin'
                 java-version: '17'
-                
