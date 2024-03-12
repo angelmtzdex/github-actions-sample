@@ -1,0 +1,23 @@
+#Este es el primer workflow que se aconseja crear al iniciar un proyecto
+
+name: unit-testing
+
+on: pull_request
+
+jobs: 
+
+    unit-testing-phase:
+
+        runs-on: ubuntu-latest
+
+        steps:
+
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Installing Java
+              uses: actions/setup-java@v4
+              with:
+                distribution: 'temurin'
+                java-version: '17'
+                
