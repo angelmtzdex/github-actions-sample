@@ -23,3 +23,6 @@ jobs:
               with:
                 distribution: 'temurin'
                 java-version: '17'
+            
+            - name: Execute test task
+              run: ./gradlew test
