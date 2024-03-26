@@ -4,7 +4,7 @@ name: build
 
 on:
     push: 
-        branches: ["main"] #se pueden poner varias branches usando corchetes separados por coma
+        branches: ["main", "testing_pr"] #se pueden poner varias branches usando corchetes separados por coma
         #si en lugar de un branch se necesita un archivo se puede utilizar el keyword paths:
 
     workflow_dispatch: 
