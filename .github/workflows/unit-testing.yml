@@ -24,5 +24,6 @@ jobs:
                 distribution: 'temurin'
                 java-version: '17'
             
+              #this step is to run the task that is already defined inside the project
             - name: Execute test task
               run: ./gradlew test
