@@ -27,7 +27,7 @@ jobs:
                 java-version: '17'
             
             - name: Building step
-              run: ./gradlew build
+              run: ./gradlew assemble
 
             - uses: actions/upload-artifact@v4
               with:
