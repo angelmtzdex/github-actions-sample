@@ -1,0 +1,30 @@
+#Este es el segundo workflow que construira la aplicacion
+
+name: build
+
+on:
+    push: 
+        branches: ["main"] #se pueden poner varias branches usando corchetes separados por coma
+        #si en lugar de un branch se necesita un archivo se puede utilizar el keyword paths:
+
+    workflow_dispatch: 
+
+jobs: 
+
+    build-phase:
+
+        runs-on: ubuntu-latest
+
+        steps:
+
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Installing Java
+              uses: actions/setup-java@v4
+              with:
+                distribution: 'temurin'
+                java-version: '17'
+            
+            - name: Building step
+              run: ./gradlew build
