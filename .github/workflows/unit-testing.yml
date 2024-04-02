@@ -34,4 +34,4 @@ jobs:
               run: ./gradlew test
 
             - name: Adding Sleep
-              run: sleep 5m
+              run: sleep 2m
