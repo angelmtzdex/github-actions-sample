@@ -5,7 +5,12 @@ name: unit-testing
 on:
     pull_request:
 
-    workflow_dispatch: 
+    workflow_dispatch:
+
+#This is to stop the last workflow if needed(for example a typo)
+concurrency:
+  group: 'pull-request-group'
+  cancel-in-progress: true
 
 jobs: 
 
@@ -27,3 +32,6 @@ jobs:
               #this step is to run the task that is already defined inside the project
             - name: Execute test task
               run: ./gradlew test
+
+            - name: Adding Sleep
+              run: sleep 2m
