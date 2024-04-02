@@ -7,6 +7,7 @@ on:
 
     workflow_dispatch:
 
+#This is to stop the last workflow if needed(for example a typo)
 concurrency:
   group: 'pull-request-group'
   cancel-in-progress: true
