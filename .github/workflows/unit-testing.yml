@@ -48,3 +48,17 @@ jobs:
               env:
                 version: 2.0
                 app_name: "peacegame"
+
+            # - name: Print env variables second way
+            #   run: | 
+            #     echo $version
+            #     echo $app_name
+            #   env:
+            #     version: 2.0
+            #     app_name: "peacegame"
+
+            - name: Export env variable
+              run: echo "type=rock" >> $GITHUB_ENV
+
+            - name: Printing variable
+              run: echo ${{env.type}}
