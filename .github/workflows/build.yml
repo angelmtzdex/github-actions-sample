@@ -56,7 +56,8 @@ jobs:
           run: echo ${{env.type}}
 
   build-phase:
-
+        
+        needs: ['unit-testing-phase']
         runs-on: ubuntu-latest
 
         steps:
