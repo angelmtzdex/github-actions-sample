@@ -77,7 +77,7 @@ jobs:
                 java-version: '17'
             
             - name: Building step
-              if: ${{ vars.CITY == 'JAPAN' }}
+              # if: ${{ vars.CITY == 'JAPAN' }}
               run: ./gradlew assemble
 
             - uses: actions/upload-artifact@v4
