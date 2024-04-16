@@ -9,9 +9,16 @@ on:
 
     workflow_dispatch: 
 
+#variables de ambiente de workflow
+env: 
+  my-secret: ${{ secrets.REGION_SECRET }}
+  my-city: ${{ vars.CITY }}
+
 jobs: 
 
   unit-testing-phase:
+
+    if: ${{ vars.CITY == 'NEW YORK' }}
 
     runs-on: ubuntu-latest
 
