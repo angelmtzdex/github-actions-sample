@@ -63,7 +63,6 @@ jobs:
   build-phase:
         
         needs: ['unit-testing-phase']
-        if: ${{ vars.CITY == 'JAPAN' }}
         runs-on: ubuntu-latest
 
         steps:
@@ -78,6 +77,7 @@ jobs:
                 java-version: '17'
             
             - name: Building step
+              if: ${{ vars.CITY == 'JAPAN' }}
               run: ./gradlew assemble
 
             - uses: actions/upload-artifact@v4
