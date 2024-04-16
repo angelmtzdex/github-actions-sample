@@ -11,7 +11,51 @@ on:
 
 jobs: 
 
-    build-phase:
+  unit-testing-phase:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Installing Java
+          uses: actions/setup-java@v4
+          with:
+            distribution: 'temurin'
+            java-version: '17'
+        
+          #this step is to run the task that is already defined inside the project
+        - name: Execute test task
+          run: ./gradlew test
+
+        # - name: Adding Sleep
+        #   run: sleep 2m
+
+        - name: Print env variables
+          run: | 
+            echo ${{ env.version }}
+            echo ${{ env.app_name }}
+          env:
+            version: 2.0
+            app_name: "peacegame"
+
+        # - name: Print env variables second way
+        #   run: | 
+        #     echo $version
+        #     echo $app_name
+        #   env:
+        #     version: 2.0
+        #     app_name: "peacegame"
+
+        - name: Export env variable
+          run: echo "type=rock" >> $GITHUB_ENV
+
+        - name: Printing variable
+          run: echo ${{env.type}}
+
+  build-phase:
 
         runs-on: ubuntu-latest
 
